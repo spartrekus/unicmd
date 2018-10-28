@@ -445,27 +445,6 @@ void filecat(  char *filein )
               }
 
 
-              // !ntubevo  
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'n' )
-              if ( fetchline[2] == 't' )
-              if ( fetchline[3] == 'u' )
-              if ( fetchline[4] == 'b' )
-              if ( fetchline[5] == 'e' )
-              if ( fetchline[6] == 'v' )
-              if ( fetchline[7] == 'o' )
-              if ( fetchline[8] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!NTUBE MPLAYER\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 8+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 ///runwith( " ntube play " , inputfield );                 
-                 runwith( " ntube playvoloop " , inputfield );                 
-                 foundcmd = 1;
-              }
-
-
               // !ntubemp 
               if ( fetchline[0] == '!' )
               if ( fetchline[1] == 'n' )
@@ -484,94 +463,6 @@ void filecat(  char *filein )
                  runwith( " ntube play " , inputfield );                 
                  foundcmd = 1;
               }
-
-
-              // !ntubemploop 
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'n' )
-              if ( fetchline[2] == 't' )
-              if ( fetchline[3] == 'u' )
-              if ( fetchline[4] == 'b' )
-              if ( fetchline[5] == 'e' )
-              if ( fetchline[6] == 'm' )
-              if ( fetchline[7] == 'p' )
-              if ( fetchline[8] ==  'l' )
-              if ( fetchline[9] ==  'o' )
-              if ( fetchline[10] == 'o' )
-              if ( fetchline[11] == 'p' )
-              if ( fetchline[12] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!NTUBE MPLAYER\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 12+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " ntube playloop " , inputfield );                 
-                 foundcmd = 1;
-              }
-
-              // !ntubempao    
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'n' )
-              if ( fetchline[2] == 't' )
-              if ( fetchline[3] == 'u' )
-              if ( fetchline[4] == 'b' )
-              if ( fetchline[5] == 'e' )
-              if ( fetchline[6] == 'm' )
-              if ( fetchline[7] == 'p' )
-              if ( fetchline[8] == 'a' )
-              if ( fetchline[9] == 'o' )
-              if ( fetchline[10] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!NTUBE MPLAYER\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 10+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " ntube playaoloop " , inputfield );                 
-                 foundcmd = 1;
-              }
-
-              // !ntubempvoloop 
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'n' )
-              if ( fetchline[2] == 't' )
-              if ( fetchline[3] == 'u' )
-              if ( fetchline[4] == 'b' )
-              if ( fetchline[5] == 'e' )
-              if ( fetchline[6] == 'm' )
-              if ( fetchline[7] == 'p' )
-              if ( fetchline[8] == 'v' )
-              if ( fetchline[9] == 'o' )
-              if ( fetchline[10] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!NTUBE MPLAYER\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 10+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " ntube playvoloop " , inputfield );                 
-                 foundcmd = 1;
-              }
-
-
-
-
-
-
-        /*
-         printf( "PATH: %s\n", getenv( "HOME" ) );
-         strncpy( cmdi, "", PATH_MAX );
-         strncat( cmdi , "       " , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi , myapp , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi , "     " , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi , "   $( python   ~/.youtube-dl -g  " , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi ,  " \""  , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi , myurl , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi ,  "\" "  , PATH_MAX - strlen( cmdi ) -1 );
-         strncat( cmdi ,  " ) "  , PATH_MAX - strlen( cmdi ) -1 );
-         printf( "<CMD: %s>\n", cmdi );
-         system( cmdi );
-        */
-
-
 
 
 
@@ -623,25 +514,6 @@ void filecat(  char *filein )
               }
 
 
-              // !elinks (...)  
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'e' )
-              if ( fetchline[2] == 'l' )
-              if ( fetchline[3] == 'i' )
-              if ( fetchline[4] == 'n' )
-              if ( fetchline[5] == 'k' )
-              if ( fetchline[6] == 's' )
-              if ( fetchline[7] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!elinks app\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 7+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " elinks " , inputfield );                 
-                 foundcmd = 1;
-              }
-
-
               // !url (...)  for chromium-browser (Pi)
               if ( fetchline[0] == '!' )
               if ( fetchline[1] == 'u' )
@@ -665,24 +537,6 @@ void filecat(  char *filein )
               }
 
 
-              // !catte (...)
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'c' )
-              if ( fetchline[2] == 'a' )
-              if ( fetchline[3] == 't' )
-              if ( fetchline[4] == 't' )
-              if ( fetchline[5] == 'e' )
-              if ( fetchline[6] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!CATTE\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 6+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 ncatfile( "te" ,  inputfield  ); 
-                 foundcmd = 1;
-              }
-
-
 
               // !url (...)
               if ( fetchline[0] == '!' )
@@ -698,43 +552,6 @@ void filecat(  char *filein )
                  runwith( " chromium-browser " , inputfield );                 
                  foundcmd = 1;
               }
-
-
-              // !runurl (...)
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'r' )
-              if ( fetchline[2] == 'u' )
-              if ( fetchline[3] == 'n' )
-              if ( fetchline[4] == 'u' )
-              if ( fetchline[5] == 'r' )
-              if ( fetchline[6] == 'l' )
-              if ( fetchline[7] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!URL\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 7+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " chromium-browser " , inputfield );                 
-                 foundcmd = 1;
-              }
-              // !urlrun   (outdated)
-              if ( fetchline[0] == '!' )
-              if ( fetchline[1] == 'u' )
-              if ( fetchline[2] == 'r' )
-              if ( fetchline[3] == 'l' )
-              if ( fetchline[4] == 'r' )
-              if ( fetchline[5] == 'u' )
-              if ( fetchline[6] == 'n' )
-              if ( fetchline[7] == ' ' )
-              if ( foundcmd == 0 )
-              {
-	         printf( "!URL\n" );
-                 strncpy( inputfield, strtrim( strcut( fetchline, 7+2, strlen( fetchline ))) , PATH_MAX );
- 	         printf( "[%s]\n", inputfield );
-                 runwith( " chromium-browser " , inputfield );                 
-                 foundcmd = 1;
-              }
-
 
 
 
