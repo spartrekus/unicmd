@@ -526,16 +526,33 @@ void filecat(  char *filein )
                  strncpy( inputfield, strtrim( strcut( fetchline, 4+2, strlen( fetchline ))) , PATH_MAX );
  	         printf( "[%s]\n", inputfield );
                  if ( fexist( "/usr/bin/chromium" ) == 1 )
-                    runwith( " chromium " , inputfield );                 
+                    runwith( " chromium --new-window " , inputfield );                 
+
                  else if ( fexist( "/usr/bin/chromium-browser" ) == 1 )
-                    runwith( " chromium-browser " , inputfield );                 
+                    runwith( " chromium-browser --new-window " , inputfield );                 
                  else if ( fexist( "/usr/bin/dillo" ) == 1 )
                     runwith( " dillo " , inputfield );                 
+
                  else
                     runwith( " links " , inputfield );                 
                  foundcmd = 1;
               }
 
+
+              // !echo text text
+              if ( fetchline[0] == '!' )
+              if ( fetchline[1] == 'e' )
+              if ( fetchline[2] == 'c' )
+              if ( fetchline[3] == 'h' )
+              if ( fetchline[4] == 'o' )
+              if ( fetchline[5] == ' ' )
+              if ( foundcmd == 0 )
+              {
+	         printf( "<!echo command>\n" );
+                 strncpy( inputfield, strtrim( strcut( fetchline, 5+2, strlen( fetchline ))) , PATH_MAX );
+ 	         printf( "%s\n", inputfield );
+                 foundcmd = 1;
+              }
 
 
               // !url (...)
