@@ -549,7 +549,6 @@ void fileuniprocess(  char *filein )
                  fputs( "!date      \n", fp11 );
                  fputs( "!author    \n", fp11 );
                  fputs( "!gpath{~/pool/figs/}\n", fp11 );
-                 ///fputs( "!begin\n", fp11 );
                  fputs( "\n", fp11 );
                  fclose( fp11 );
                  foundcmd = 1; 
@@ -572,8 +571,12 @@ void fileuniprocess(  char *filein )
               if ( foundcmd == 0 ) 
               {
                  content_export = 1;
+                 if ( strcmp( file_export, "" ) == 0 ) 
+ 	           strncpy( file_export, "noname.dat" , PATH_MAX );
+                 printf( "Create a basic noname.dat for export\n" );
                  foundcmd = 1; 
               }
+
 
 
               if ( foundcmd == 0 ) 
@@ -842,6 +845,23 @@ void fileuniprocess(  char *filein )
                  foundcmd = 1;
               }
 
+              // !strlen (...)  
+              if ( fetchline[0] == '!' )
+              if ( fetchline[1] == 's' )
+              if ( fetchline[2] == 't' )
+              if ( fetchline[3] == 'r' )
+              if ( fetchline[4] == 'l' )
+              if ( fetchline[5] == 'e' )
+              if ( fetchline[6] == 'n' )
+              if ( fetchline[7] == ' ' )
+              if ( foundcmd == 0 )
+              {
+	         printf( "!strlen text\n" );
+                 strncpy( inputfield,  strcut( fetchline, 7+2, strlen( fetchline )) , PATH_MAX );
+ 	         printf( " => [string: %s]\n", inputfield );
+ 	         printf( " => [strlen: %d]\n", strlen( inputfield) );
+                 foundcmd = 1;
+              }
 
 
               // !cat (...)  
